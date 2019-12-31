@@ -1,0 +1,24 @@
+channel_url: ['navigationEndpoint', 'browseEndpoint', 'canonicalBaseUrl']
+channel_title: ['title', 'simpleText']
+subscribers_count: ['subscriberCountText', 'simpleText']
+section_tabs: ['contents', 'twoColumnBrowseResultsRenderer', 'tabs']
+about_section_tab: ['tabRenderer', 'content', 'sectionListRenderer',
+  'contents', 0, 'itemSectionRenderer', 'contents', 0,
+  'channelAboutFullMetadataRenderer']
+video_section_tabs: ['tabRenderer', 'content', 'sectionListRenderer',
+  'contents', 0, 'itemSectionRenderer', 'contents', 0, 'gridRenderer', 'items']
+playlist_id: ['tabRenderer', 'content', 'sectionListRenderer', 'subMenu',
+  'channelSubMenuRenderer', 'playAllButton', 'buttonRenderer',
+  'navigationEndpoint', 'watchPlaylistEndpoint', 'playlistId']
+video_ids: ['gridVideoRenderer', 'videoId']
+country: ['country', 'simpleText']
+description_first: ['description', 'simpleText']
+description_second: ['artistBio', 'simpleText']
+meta_avatar: ['metadata', 'channelMetadataRenderer', 'avatar', 'thumbnails']
+avatar: ['avatar', 'thumbnails']
+tags: ['microformat', 'microformatDataRenderer', 'tags']
+views: ['viewCountText', 'runs']
+keywords: ['metadata', 'channelMetadataRenderer', 'keywords']
+tab_renderer: ['tabRenderer']
+title: ['title', 'simpleText']
+statistics: ['networkStatistics', 'statistics']
