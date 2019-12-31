@@ -1,9 +1,4 @@
 # YoutubeParser
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/youtube_parser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -26,7 +21,12 @@ To fetch youtube channel info:
 ```ruby
 require 'youtube_parser'
 
-YoutubeParser::Channel.new('https://www.youtube.com/channel/channel_id').info
+user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 '\
+    '(KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+options = { channel_url: 'https://www.youtube.com/channel/channel_id',
+            user_agent: user_agent }
+
+YoutubeParser::Channel.new(options).info
 ```
 
 ## Development
