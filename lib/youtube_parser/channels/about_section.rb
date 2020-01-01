@@ -24,6 +24,11 @@ module YoutubeParser
         section.dig(*keys.title)
       end
 
+      def email
+        regex = /#{URI::MailTo::EMAIL_REGEXP.source.gsub(/\\A|\\z/, '')}/
+        description[regex]
+      end
+
       def description
         descriptions = [section.dig(*keys.description_first),
                         section.dig(*keys.description_second)]
