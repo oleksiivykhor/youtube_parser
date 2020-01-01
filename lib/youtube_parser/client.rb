@@ -24,6 +24,7 @@ module YoutubeParser
       opts = { ssl: { verify: false }, request: { timeout: 10 } }
       @client ||= Faraday.new(BASE_URL, opts) do |request|
         request.adapter Faraday.default_adapter
+        request.headers['Accept-Language'] = 'en-US'
         request.headers['User-Agent'] = options.user_agent if options.user_agent
         request.proxy = proxy if options.proxy
       end
