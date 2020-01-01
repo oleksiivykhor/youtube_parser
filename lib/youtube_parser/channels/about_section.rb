@@ -8,6 +8,7 @@ module YoutubeParser
       def info
         {
           title: title,
+          email: email,
           description: description,
           country: country,
           tags: tags,
