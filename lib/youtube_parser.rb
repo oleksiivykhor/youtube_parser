@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'active_support'
-require 'active_support/core_ext'
 require 'uri'
 require 'oj'
 require 'faraday'
 require 'ostruct'
 require 'yaml'
 require 'pathname'
+require 'active_support'
+require 'active_support/core_ext'
 
 require 'youtube_parser/version'
 require 'youtube_parser/resource'
