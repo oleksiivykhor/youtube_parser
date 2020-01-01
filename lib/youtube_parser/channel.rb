@@ -12,6 +12,7 @@ module YoutubeParser
 
     def collect_channel_info
       data = about_section_info.merge(video_section_info)
+      data[:channel_url] = channel_url
       data.select! { |_, v| v.present? }
     end
 
@@ -21,6 +22,15 @@ module YoutubeParser
 
     def video_section_info
       @video_section_info ||= section(:videos).info
+    end
+
+    def channel_url
+      uri = URI(client.class::BASE_URL)
+      uri.path = options.channel_url
+
+      uri.to_s
+    rescue URI::InvalidComponentError
+      options.channel_url
     end
 
     def section(title)

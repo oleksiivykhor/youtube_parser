@@ -11,6 +11,9 @@ playlist_id: ['tabRenderer', 'content', 'sectionListRenderer', 'subMenu',
   'channelSubMenuRenderer', 'playAllButton', 'buttonRenderer',
   'navigationEndpoint', 'watchPlaylistEndpoint', 'playlistId']
 video_ids: ['gridVideoRenderer', 'videoId']
+second_video_section: ['tabRenderer', 'content', 'sectionListRenderer', 'contents',
+  0, 'itemSectionRenderer', 'contents', 0, 'shelfRenderer', 'content',
+  'horizontalListRenderer', 'items']
 country: ['country', 'simpleText']
 description_first: ['description', 'simpleText']
 description_second: ['artistBio', 'simpleText']
@@ -22,3 +25,11 @@ keywords: ['metadata', 'channelMetadataRenderer', 'keywords']
 tab_renderer: ['tabRenderer']
 title: ['title', 'simpleText']
 statistics: ['networkStatistics', 'statistics']
+channels_page: ['contents', 'twoColumnSearchResultsRenderer', 'primaryContents',
+  'sectionListRenderer', 'contents']
+continuation_contents: ['continuationContents', 'itemSectionContinuation']
+channels_contents: ['itemSectionRenderer', 'contents']
+channel_renderer: ['channelRenderer']
+continuations: ['continuations']
+renderer_continuations: ['itemSectionRenderer', 'continuations']
+continuation: ['nextContinuationData', 'continuation']

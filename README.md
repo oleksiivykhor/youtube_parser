@@ -29,11 +29,23 @@ options = { channel_url: 'https://www.youtube.com/channel/channel_id',
 YoutubeParser::Channel.new(options).info
 ```
 
-## Development
+To search channels by query:
+```ruby
+require 'youtube_parser'
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 '\
+    '(KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+options = { search_query: 'search query',
+            user_agent: user_agent }
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# Search with pagination
+YoutubeParser::Search::Channels.new(options).for_each_channels do |channel|
+  channel
+end
+
+# First page channels
+YoutubeParser::Search::Channels.new(options).info
+```
 
 ## Contributing
 

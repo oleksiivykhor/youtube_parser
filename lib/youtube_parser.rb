@@ -15,6 +15,7 @@ require 'youtube_parser/base_parser'
 require 'youtube_parser/channel'
 require 'youtube_parser/channels/about_section'
 require 'youtube_parser/channels/videos_section'
+require 'youtube_parser/search/channels'
 
 module YoutubeParser
   def self.root

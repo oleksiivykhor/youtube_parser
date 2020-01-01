@@ -13,6 +13,8 @@ module YoutubeParser
 
     def get(endpoint, options = {})
       response = client.get(endpoint, options)
+      return {} unless response.status.eql?(200)
+
       json_str = response.body[DATA_REGEX, 1]
 
       get_json json_str

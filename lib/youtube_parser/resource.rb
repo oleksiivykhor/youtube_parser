@@ -13,6 +13,10 @@ module YoutubeParser
       @attributes ||= @hash.transform_keys(&:to_sym)
     end
 
+    def keys
+      @keys ||= attributes.keys
+    end
+
     def method_missing(method, *args, &block)
       super_method = super
       return super_method if super_method
