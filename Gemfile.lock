@@ -1,7 +1,10 @@
 PATH
   remote: .
   specs:
-    youtube_parser (0.1.5)
+    youtube_parser (0.1.6)
+      activesupport
+      faraday
+      oj
 
 GEM
   remote: https://rubygems.org/

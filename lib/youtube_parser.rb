@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'uri'
 require 'oj'
+require 'uri'
 require 'faraday'
 require 'ostruct'
 require 'yaml'
