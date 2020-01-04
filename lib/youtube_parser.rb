@@ -20,6 +20,7 @@ require 'youtube_parser/search/channels'
 
 module YoutubeParser
   def self.root
-    Pathname.new(Dir.pwd)
+    path = Gem::Specification.find_by_name('youtube_parser').gem_dir
+    Pathname.new(path)
   end
 end
