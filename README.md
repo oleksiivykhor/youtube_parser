@@ -39,7 +39,7 @@ options = { search_query: 'search query',
             user_agent: user_agent }
 
 # Search with pagination
-YoutubeParser::Search::Channels.new(options).for_each_channels do |channel|
+YoutubeParser::Search::Channels.new(options).for_each_channel do |channel|
   channel
 end
 
