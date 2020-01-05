@@ -41,11 +41,11 @@ module YoutubeParser
       end
 
       def tags
-        section.dig(*keys.keywords)
+        json.dig(*keys.keywords).to_s.split('"').select(&:present?)
       end
 
       def avatar_url
-        results = section.dig(*keys.avatar) || section.dig(*keys.meta_avatar)
+        results = json.dig(*keys.meta_avatar) || section.dig(*keys.avatar)
         return if results.nil? || results.empty?
 
         results.detect { |t| t&.dig('url') }&.dig('url')
@@ -59,7 +59,8 @@ module YoutubeParser
       end
 
       def followers_count
-        statistics :followers_count
+        count = scrape_subscribers_count
+        count.present? ? count : statistics(:followers_count)
       end
 
       def videos_count
@@ -71,6 +72,29 @@ module YoutubeParser
         stats = section.dig(*keys.statistics) || []
 
         stats[indexes[title.to_sym].to_i].to_s.gsub(/\D+/, '')
+      end
+
+      def scrape_subscribers_count
+        return unless subscribers_match
+
+        number = subscribers_match[:number].gsub(',', '.').to_f
+        return number.to_i unless subscribers_match[:units].present?
+
+        subscribers_with_units number
+      end
+
+      def subscribers_with_units(number)
+        (number * units[subscribers_match[:units].downcase.to_sym]).to_i
+      end
+
+      def subscribers_match
+        regex = /(?<number>[\d.,]+)(?<units>\w?)/
+        subscribers_text = json.dig(*keys.subscribers_count_text).to_s
+        subscribers_text.match(regex)
+      end
+
+      def units
+        { m: 1_000_000, k: 1_000 }
       end
 
       def section

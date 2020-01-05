@@ -1,6 +1,8 @@
 channel_url: ['navigationEndpoint', 'browseEndpoint', 'canonicalBaseUrl']
 channel_title: ['title', 'simpleText']
 subscribers_count: ['subscriberCountText', 'simpleText']
+subscribers_count_text: ['header', 'c4TabbedHeaderRenderer',
+  'subscriberCountText']
 section_tabs: ['contents', 'twoColumnBrowseResultsRenderer', 'tabs']
 about_section_tab: ['tabRenderer', 'content', 'sectionListRenderer',
   'contents', 0, 'itemSectionRenderer', 'contents', 0,
