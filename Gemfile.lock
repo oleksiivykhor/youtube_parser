@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    youtube_parser (0.1.9)
+    youtube_parser (0.1.10)
       activesupport
       faraday
       oj

@@ -6,11 +6,15 @@ module YoutubeParser
       options :channel_url
 
       def info
-        @info ||= channel_urls.map do |url|
+        @info ||= for_each_channel { |c| c }
+      end
+
+      def for_each_channel
+        channel_urls.map do |url|
           channel_url = "#{client.class::BASE_URL}#{url}"
           opts = { channel_url: channel_url, client: client }
 
-          YoutubeParser::Channel.new(opts).info
+          yield YoutubeParser::Channel.new(opts).info
         end
       end
 
