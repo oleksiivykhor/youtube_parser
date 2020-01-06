@@ -35,3 +35,7 @@ channel_renderer: ['channelRenderer']
 continuations: ['continuations']
 renderer_continuations: ['itemSectionRenderer', 'continuations']
 continuation: ['nextContinuationData', 'continuation']
+channels_section: ['tabRenderer', 'content', 'sectionListRenderer', 'contents',
+  0, 'itemSectionRenderer', 'contents', 0, 'gridRenderer', 'items']
+channels_section_urls: ['gridChannelRenderer', 'navigationEndpoint',
+  'commandMetadata', 'webCommandMetadata', 'url']
